@@ -1,36 +1,24 @@
 BREAKOUT
-8x8​​Matrix​​Game​​(Arduino)
-Descriere​​generala:
-Breakout​​este​​un​​joc​​bine​​cunoscut​​creat​​pentru​​prima​​data​​de​​Atari.​​In​​partea
-de​​sus​​a​​ecranului​​exista​​un​​strat​​de​​caramizi.​​Jos​​exista​​o​​platforma​​care​​este
-controlata​​de​​utilizator.​​O​​bila​​traverseaza​​ecranul​​si​​ricoseaza​​intre​​platforma​​si
-caramizi.​​Cand​​loveste​​o​​caramida,​​aceasta​​este​​distrusa.​​Nivelul​​se​​termina​​cand
-toate​​caramizile​​sunt​​distruse.
-Jocul​​este​​creat​​folosind​​o​​matrice​​de​​8x8​​led-uri,​​un​​display​​LCD​​cu​​16x2
-caractere,​​un​​joystick,​​un​​buzzer,​​arduino​​si​​alte​​componente​​diverse​​(condensatori,
-rezistori,​​breadboard-uri,​​fire).
-Actiunea​​principala​​se​​desfasoara​​pe​​matricea​​de​​8x8​​led-uri.​​Dispunerea
-elementelor​​jocului​​este​​cea​​descrisa​​mai​​sus.​​Platforma​​va​​fi​​controlata​​folosind
-joystick-ul​​(stanga-dreapta).​​In​​timpul​​jocului​​pe​​display​​se​​vor​​afisa​​nivelul,​​vietile​​si
-scorul.
+8x8 Matrix Game (Arduino)
+Descriere generala:
+    Breakout este un joc bine cunoscut creat pentru prima data de Atari. In partea de sus a ecranului exista un strat de caramizi. Jos exista o platforma care este controlata de utilizator. O bila traverseaza ecranul si ricoseaza intre platforma si caramizi. Cand loveste o caramida, aceasta este distrusa. Nivelul se termina cand toate caramizile sunt distruse.
+    Jocul este creat folosind o matrice de 8x8 led-uri, un display LCD cu 16x2 caractere, un joystick, un buzzer, arduino si alte componente diverse (condensatori, rezistori, breadboard-uri, fire).
+    Actiunea principala se desfasoara pe matricea de 8x8 led-uri. Dispunerea elementelor jocului este cea descrisa mai sus. Platforma va fi controlata folosind joystick-ul (stanga-dreapta). In timpul jocului pe display se vor afisa nivelul, vietile si scorul.
+
 Reguli:
-1. La​​pornire​​matricea​​afiseaza​​ceva​​(o​​stea​​care​​se​​aprinde​​si​​stinge),​​iar​​pe
-LCD​​scrie​​“PRESS​​TO​​START’​​asteptandu-se​​apasarea​​pe​​buton-ul
-joystick-ului.​​La​​apasarea​​butonului,​​se​​incarca​​primul​​nivel​​si​​jocul​​incepe.
-2. La​​pierderea​​celor​​3​​vieti,​​se​​asteapta​​din​​nou​​pornirea​​jocului.
-3. Dificultatea​​progresiva​​se​​realizeaza​​crescand​​viteza​​bilei​​la​​fiecare​​caramida
-sparta.​​Daca​​se​​pierde​​o​​viata,​​viteza​​bilei​​se​​reseteaza.​​Fiecare​​nivel​​incepe
-cu​​viteza​​bilei​​predefinita.​​Jocul​​are​​3​​nivele.​​Scorul​​se​​afiseaza​​in​​timp​​real​​si
-se​​calculeaza​​ca​​scor​​+=​​viteza_bilei*10​​la​​fiecare​​bloc​​spart.​​​​Exista​​3​​vieti​​in
-total​​si​​la​​fiecare​​nivel​​trecut​​se​​mai​​adauga​​o​​viata.
-4. Chiar​​si​​la​​viteza​​maxima​​jocul​​este​​relativ​​simplu​​de​​jucat.
-5. La​​terminarea​​tuturor​​nivelelor​​se​​afiseaza​​WIN​​GAME​​pe​​LCD,​​sta​​cateva
-secunde​​dupa​​care​​se​​asteapta​​din​​nou​​pornirea​​jocului.
-Descriere​​cod:
-Codul​​este​​structurat​​pe​​clase,​​fiecare​​cu​​functionalitate​​bine​​definita.​​Avem
-clasele​​Level,​​Platform,​​Ball​​si​​Game.​​Doar​​clasa​​Game​​are​​voie​​sa​​creeze​​si​​sa
-foloseasca​​obiecte​​de​​tip​​level,​​platform​​si​​ball.​​Logica​​principala​​a​​jocului​​este
-implementata​​in​​metodele​​clasei​​Game.​​In​​loop​​se​​face​​citirea​​inputului​​(butonul​​de
-la​​joystick​​pentru​​start​​joc/level),​​creearea​​jocului,​​incarcarea​​nivelului,​​trecerea​​la
-nivelul​​urmator,​​verificari​​pentru​​diferite​​cazuri​​(nivel​​incarcat,​​nivel​​pornit,​​fara​​vieti,
-etc.).
+La pornire matricea afiseaza ceva (o stea care se aprinde si stinge), iar pe LCD scrie “PRESS TO START’ asteptandu-se apasarea pe buton-ul joystick-ului. La apasarea butonului, se incarca primul nivel si jocul incepe.
+La pierderea celor 3 vieti, se asteapta din nou pornirea jocului.
+Dificultatea progresiva se realizeaza crescand viteza bilei la fiecare caramida sparta. Daca se pierde o viata, viteza bilei se reseteaza. Fiecare nivel incepe cu viteza bilei predefinita. Jocul are 3 nivele. Scorul se afiseaza in timp real si se calculeaza ca scor += viteza_bilei*10 la fiecare bloc spart.  Exista 3 vieti in total si la fiecare nivel trecut se mai adauga o viata.
+Chiar si la viteza maxima jocul este relativ simplu de jucat.
+La terminarea tuturor nivelelor se afiseaza WIN GAME pe LCD, sta cateva secunde dupa care se asteapta din nou pornirea jocului.
+
+Descriere cod:
+    Codul este structurat pe clase, fiecare cu functionalitate bine definita. Avem clasele Level, Platform, Ball si Game. Doar clasa Game are voie sa creeze si sa foloseasca obiecte de tip level, platform si ball. Logica principala a jocului este implementata in metodele clasei Game. In loop se face citirea inputului (butonul de la joystick pentru start joc/level), creearea jocului, incarcarea nivelului, trecerea la nivelul urmator, verificari pentru diferite cazuri (nivel incarcat, nivel pornit, fara vieti, etc.). 
+
+
+
+    
+
+
+
+
